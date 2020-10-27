@@ -36,6 +36,28 @@ $tasks = array(
     ]
 );
 
+function project ($name_task, $main_navigation){
+   /* $name_project = array(
+        'first_project'=>['Входящие'],
+        'second_project'=>['Учеба'],
+        'third_project'=>['Работа'],
+        'fourth_project'=>['Домашние дела'],
+        'fifth_project'=>['Авто']
+    );*/
+    $name_task = array(
+        'first_task' => ['Собеседование в IT компании'],
+        'second_task' => ['Выполнить тестовое задание'],
+        'third_task' => ['Встреча с другом'],
+        'fourth_task' => ['Сделать задание первого раздела'],
+        'fifth_task' => ['Купить корм для кота'],
+        'six_task'=>['Заказать пиццу']
+    );
+}
+          
+            
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -85,7 +107,7 @@ $tasks = array(
                             foreach ($main_navigation as $key => $value) {
                                 echo '<li class="main-navigation__list-item">
                                         <a class="main-navigation__list-item-link" href="#">' . $value . '</a>
-                                        <span class="main-navigation__list-item-count"></span>
+                                        <span class="main-navigation__list-item-count">'. project($name_task, $name_project).'</span>
                                      </li>';
                             }
                             ?>
