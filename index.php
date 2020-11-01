@@ -40,7 +40,18 @@ $tasks = array(
         'Выполнение' => ''
     )
 );
+function tasksCount($tasks, &$value)
+{
 
+    $tasksCount = 0;
+    foreach ($tasks as $key => $task) {
+        if ($task['Категория'] == $value) {
+            $tasksCount++;
+        }
+    }
+    return $tasksCount;
+    echo $tasksCount;
+};
 
 ?>
 <!DOCTYPE html>
@@ -87,7 +98,7 @@ $tasks = array(
                             foreach($project as $key => $value){ 
                             echo '<li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#">'.$value.'</a>
-                                <span class="main-navigation__list-item-count">0</span>
+                                <span class="main-navigation__list-item-count">'. tasksCount($tasks, $value) .'</span>
                             </li>';}
                             ?>
                         </ul>
