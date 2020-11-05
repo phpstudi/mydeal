@@ -2,7 +2,6 @@ CREATE DATABASE Дела_в_порядке;
 CREATE TABLE project(
     id INT NOT NULL AUTO_INCREMENT,
     projects VARCHAR(30),
-    userID INT,
     PRIMARY KEY (id)
 ); 
 CREATE INDEX projetsINDEX ON project(projects);
@@ -14,8 +13,6 @@ CREATE TABLE task(
     name_task VARCHAR(200),
     file_users  VARCHAR(100),
     due_date DATE,
-    usertaskID INT,
-    projectID INT,
     PRIMARY KEY (id)
 );
 CREATE INDEX name_taskINDEX ON task(name_task);
