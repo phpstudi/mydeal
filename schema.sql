@@ -5,18 +5,7 @@ CREATE TABLE project(
     userID INT,
     PRIMARY KEY (id)
 ); 
-INSERT INTO project(projects)
-    VALUES 
-    ('входящие'),
-    ('учеба'),
-    ('работа'),
-    ('домашние дела'),
-    ('авто');
-
-INSERT INTO project(userID)
-    VALUES (1),(2),(3);
-    SELECT project.projects, users.name_user FROM users
-    INNER JOIN project ON users.id = project.userID;
+CREATE INDEX projetsINDEX ON project(projects);
 
 CREATE TABLE task(
     id INT NOT NULL AUTO_INCREMENT,
@@ -29,21 +18,7 @@ CREATE TABLE task(
     projectID INT,
     PRIMARY KEY (id)
 );
-INSERT INTO task(name_task)
-    VALUES 
-    ('Собеседование в IT компании'),
-    ('Выполнить тестовое задание'),
-    ('Сделать задание первого раздела'),
-    ('Встреча с другом'),
-    ('Купить корм для кота'),
-    ('Заказать пиццу');
-
-INSERT INTO task(usertaskID, projectID)
-    VALUES 
-    (1,2),
-    (2,3);
-    SELECT task.usertaskID, users.name_user FROM users
-    INNER JOIN task ON users.id = task.usertaskID;
+CREATE INDEX name_taskINDEX ON task(name_task);
 
 CREATE TABLE users(
     id INT NOT NULL AUTO_INCREMENT,
@@ -53,13 +28,9 @@ CREATE TABLE users(
     password_user VARCHAR(30),
     PRIMARY KEY (id)
 );
-CREATE INDEX UserINDEX ON users(name_user)
+CREATE INDEX UserINDEX ON users(name_user);
 
-INSERT INTO users(name_user)
-    VALUES 
-    ('Bob'),
-    ('Tom'),
-    ('Alex'),
+
 
 
 
