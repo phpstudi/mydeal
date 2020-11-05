@@ -127,10 +127,9 @@ function tasksCount($tasks, &$value)
                         <label class="checkbox">
                             <?php
                             if ($show_complete_tasks == 1) {
-                                echo  '<input class="checkbox__input visually-hidden show_completed" type="checkbox" checked>';
-                            } elseif ($show_complete_tasks == 0) {
-                                echo  '<input class="checkbox__input visually-hidden show_completed" type="checkbox">';
+                                $checked = 'checked';
                             }
+                            echo '<input class="checkbox__input visually-hidden show_completed" type="checkbox" '. $checked.'>';
                             ?>
                             <!--добавить сюда атрибут "checked", если переменная $show_complete_tasks равна единице-->
                             <span class="checkbox__text">Показывать выполненные</span>
