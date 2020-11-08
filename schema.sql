@@ -1,8 +1,9 @@
 CREATE DATABASE Дела_в_порядке;
 CREATE TABLE project(
     id INT NOT NULL AUTO_INCREMENT,
-    projects VARCHAR(30),
+    projects INT,
     PRIMARY KEY (id)
+    FOREIGN KEY (userID) REFERENCES users(id)
 ); 
 CREATE INDEX projetsINDEX ON project(projects);
 
@@ -13,7 +14,9 @@ CREATE TABLE task(
     name_task VARCHAR(200),
     file_users  VARCHAR(100),
     due_date DATE,
-    PRIMARY KEY (id)
+    projectID INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (projectID) REFERENCES project(id)
 );
 CREATE INDEX name_taskINDEX ON task(name_task);
 

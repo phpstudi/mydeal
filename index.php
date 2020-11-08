@@ -95,11 +95,13 @@ function tasksCount($tasks, &$value)
                     <nav class="main-navigation">
                         <ul class="main-navigation__list">
                             <?
-                            foreach($project as $key => $value){ 
+                            /*foreach($project as $key => $value){ 
                             echo '<li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#">'.$value.'</a>
                                 <span class="main-navigation__list-item-count">'. tasksCount($tasks, $value) .'</span>
-                            </li>';}
+                            </li>';}*/
+                            $con = mysqli_connect("localhost", "root", "root", "дела_в_порядке");
+                            $sql = 
                             ?>
                         </ul>
                     </nav>
