@@ -53,7 +53,17 @@
                 if ($value['Выполнение'] == 1) {
                     $task_completed = 'task--completed';
                 } elseif ($value['Выполнение'] == 0 && $show_complete_tasks == 0) continue;
-                echo ' <tr class="tasks__item task' . $task_completed . ' ">
+                //задание 6
+                $secs_in_day=86400;
+                $date_today_str = strtotime ("09.11.2020");
+                $date_task_complete = strtotime($value['Дата выполнения']);
+                $diff= $date_task_complete- $date_today_str;
+                    if($diff<= $secs_in_day){
+                        $task_important ='task--important';
+                    } 
+                
+                echo ' <tr class="tasks__item task' . $task_completed .''. $task_important.' ">
+                
                                         <td class="task__select">
                                             <label class="checkbox task__checkbox">
                                                 <input class="checkbox__input visually-hidden" type="checkbox">

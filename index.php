@@ -55,4 +55,5 @@ $title='Дела в порядке';
 $content = include_template("main.php", array('show_complete_tasks'=>$show_complete_tasks, 'project'=> $project, 'tasks'=> $tasks));
 $layout = include_template("layout.php",array('content'=>$content, 'user_name'=> $user_name, 'title'=> $title));
 print $layout;
+date_default_timezone_set('Europe/Moscow');
 ?>
