@@ -56,4 +56,11 @@ $content = include_template("main.php", array('show_complete_tasks'=>$show_compl
 $layout = include_template("layout.php",array('content'=>$content, 'user_name'=> $user_name, 'title'=> $title));
 print $layout;
 date_default_timezone_set('Europe/Moscow');
+
+
+$con = mysqli_connect("host", "root", "root", "Дела_в_порядке");
+    if($con==false){
+        print("Ошибка подключения". mysqli_connect_error());
+        mysqli_set_charset($con,"utf8");
+    }
 ?>
