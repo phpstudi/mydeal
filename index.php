@@ -71,10 +71,11 @@ $sql = "SELECT project.projects, users.name_user FROM users
 $res = mysqli_query($con, $sql);
 $project_user = mysqli_fetch_all($res, MYSQLI_ASSOC);
 
+//6 занятие-1с
 $sqltask = "SELECT task.name_task, project.projects FROM project
     INNER JOIN task ON task.projectID = project.id
     WHERE project.id=2";
-$restask = mysqli_query($con, $sql);
-$project_task = mysqli_fetch_all($res, MYSQLI_ASSOC);
+$restask = mysqli_query($con, $sqltask);
+$project_task = mysqli_fetch_all($restask, MYSQLI_ASSOC);
 
 ?>
