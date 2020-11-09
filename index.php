@@ -57,10 +57,18 @@ $layout = include_template("layout.php",array('content'=>$content, 'user_name'=>
 print $layout;
 date_default_timezone_set('Europe/Moscow');
 
-
+//6 занятие -1а
 $con = mysqli_connect("host", "root", "root", "Дела_в_порядке");
     if($con==false){
         print("Ошибка подключения". mysqli_connect_error());
         mysqli_set_charset($con,"utf8");
     }
+//6 зантие-1b
+$sql = "SELECT project.projects, users.name_user FROM users
+    INNER JOIN project ON users.id = project.userID
+    WHERE userID=2;";
+$res = mysqli_query($con, $sql);
+$project_user = mysqli_fetch_all($res, MYSQLI_ASSOC);
+
 ?>
+
