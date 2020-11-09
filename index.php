@@ -64,17 +64,18 @@ if ($con == false) {
     print("Ошибка подключения" . mysqli_connect_error());
     mysqli_set_charset($con, "utf8");
 }
-//6 зантие-1b
+//6 занятие-1b
 $sql = "SELECT project.projects, users.name_user FROM users
     INNER JOIN project ON users.id = project.userID
     WHERE userID=2";
 $res = mysqli_query($con, $sql);
 $project_user = mysqli_fetch_all($res, MYSQLI_ASSOC);
-
+//6 занятие-1с
 $sqltask = "SELECT task.name_task, project.projects FROM project
     INNER JOIN task ON task.projectID = project.id
     WHERE project.id=2";
-$restask = mysqli_query($con, $sql);
-$project_task = mysqli_fetch_all($res, MYSQLI_ASSOC);
-
+$restask = mysqli_query($con, $sqltask);
+$project_task = mysqli_fetch_all($restask, MYSQLI_ASSOC);
+//6 занятие-1d
+print(include_template('main.php',['project'=>$project_user, 'tasks'=> $project_task]));
 ?>
